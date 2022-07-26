@@ -1,7 +1,12 @@
 import shutil
+import sys
 from pathlib import *
 path = ''
-chars = '\"\'+-/*!&$#?=@<>abcdefghijklmnopqrstuvwxyz1234567890'
+chars = '\"\'+-/*!&$#?=@<>[]abcdefghijklmnopqrstuvwxyz1234567890'
+if sys.version_info > (3,0):
+    print('Python 3.x has been detected')
+else:
+    exit("Please run in Python 3.x!")
 def UserInput():
     global path
     while True:
@@ -17,6 +22,7 @@ def UserInput():
                 print("Directory has not exsist")    
 def SortFiles():
     global path
+    path = path+"\\"
     files = Path(path).glob("*.*")
     for file in files:
         for char in chars:
@@ -34,5 +40,5 @@ def SortFiles():
 
 UserInput()
 SortFiles()
-
+exit = input('Press Enter to exit...')
 
