@@ -49,7 +49,7 @@ def SortFiles():
                     else:
                         try:
                             shutil.move(path+file.name,path+char)
-                            print(file.name,"moved to ",char) 
+                            print(f"{file.name} moved to {char}") 
                         except Exception as ex:
                             print(f"Error: {ex}")
                 else:
@@ -57,7 +57,7 @@ def SortFiles():
                     Path(path_dir).mkdir()
                     try:
                         shutil.move(path+file.name,path+char)
-                        print(file.name,"moved to",char)  
+                        print(f"{file.name} moved to {char}")  
                     except Exception as ex:
                         print(f"Error: {ex}")
                     
